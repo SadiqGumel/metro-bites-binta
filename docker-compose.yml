@@ -1,0 +1,13 @@
+
+
+services:
+  binta-assistant:
+    build: .
+    container_name: metro_bites_binta
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    restart: unless-stopped
